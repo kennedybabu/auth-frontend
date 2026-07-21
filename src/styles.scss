@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+//create global styles for forms 
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+form {
+    padding: 1rem;
+   
+
+    .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+
+        label {
+            color: #535353;
+            margin: 5px 0;
+        }
+
+        input {
+            border-radius: 10px;
+            border: 1px solid #a1a1a1;
+            padding: .4rem;
+            width: 100%;
+
+            &::placeholder {
+                font-size: small;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+        }
+
+    }
+
+    hr {
+        color: #888787;
+    }
+    
+    button {
+        padding: .5rem;
+        cursor: pointer;
+        border-radius: 16px;
+        display: flex;
+        font-size: small;
+
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;        
+
+        svg {
+            height: 23px;
+            width: 33px;
+        }
+    }
+
+    button.submit-btn {
+        background-color: #193f0b;
+        color: #fafafa;
+    }
+}
