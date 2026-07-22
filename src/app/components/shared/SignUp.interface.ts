@@ -1,6 +1,8 @@
 export class SignupUser {
-    "firstName": string
-    "lastName" : string
-    "email" : string
-    "password" : string
+    "firstName": string | null
+    "lastName" : string | null
+    "email" : string | null
+    "password" : string | null
+    "username": string | null
+    "phone" : string | null
 }
