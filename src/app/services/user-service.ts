@@ -5,6 +5,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../components/shared/User';
 import { UserResponse } from '../components/shared/UserResponse';
+import { LoginUser } from '../components/shared/LoginUser.interface';
 // import environment from 'first'
 
 @Injectable({
@@ -15,8 +16,11 @@ export class UserService {
   private BASE_URL = environment.apiUrl;
 
   createUser(user: SignupUser): Observable<UserResponse> {
-    // console.log(user)
     return this.http.post<UserResponse>(`${this.BASE_URL}/users/register`, user);
+  }
+
+  loginUser(user: LoginUser): Observable<UserResponse> {
+    return this.http.post<UserResponse>(`${this.BASE_URL}/users/login`, user);
   }
   
 }

@@ -1,7 +1,7 @@
 import { UserService } from './../../../services/user-service';
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormControl,ReactiveFormsModule } from '@angular/forms'
+import { FormBuilder,ReactiveFormsModule } from '@angular/forms'
 import { SignupUser } from '../../../components/shared/SignUp.interface';
 import { RouterLink } from "@angular/router";
 import { HotToastService } from '@ngxpert/hot-toast';

@@ -15,7 +15,7 @@
                     <small>Forgot your password? <a routerLink="/reset-password" class="cursor-pointer">Reset</a></small>
                 </div>
                 <div class="my-4 flex flex-col w-full p-1">
-                    <button class="w-full shadow submit-btn">login</button>
+                    <button class="w-full shadow submit-btn" [disabled]="loginUserForm.invalid" (click)="loginUser()">login</button>
                 </div>
 
                 <hr class="my-4">
