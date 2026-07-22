@@ -1,5 +1,5 @@
 export class UserResponse {
-    "data": object
+    "data": string
     "message" : string
     "statusCode" : number
     "success" : string

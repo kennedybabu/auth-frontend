@@ -33,11 +33,13 @@ export class Login {
 
     this.userService.loginUser(this.loginUserForm.getRawValue()).subscribe({
       next: (resp: UserResponse) => {
+        console.log(resp)
         this.router.navigate(["/"])
+        localStorage.setItem('data', resp.data);
         this.toast.success(resp.message)
       },
       error: (err) => {
-        this.toast.error(err)
+        this.toast.error("unable to login")
       }
     })
   }  
