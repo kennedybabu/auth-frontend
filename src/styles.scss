@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@ngxpert/hot-toast/styles';
 @import "tailwindcss";
 
 //create global styles for forms 
@@ -76,3 +77,4 @@ form {
         color: #fafafa;
     }
 }
+/* Importing @ngxpert/hot-toast SCSS file. */

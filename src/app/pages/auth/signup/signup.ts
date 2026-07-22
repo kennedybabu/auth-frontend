@@ -4,6 +4,9 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl,ReactiveFormsModule } from '@angular/forms'
 import { SignupUser } from '../../../components/shared/SignUp.interface';
 import { RouterLink } from "@angular/router";
+import { HotToastService } from '@ngxpert/hot-toast';
+import { UserResponse } from '../../../components/shared/UserResponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,6 +17,9 @@ import { RouterLink } from "@angular/router";
 export class Signup {
     private formBuilder = inject(FormBuilder);
     private userSevice = inject(UserService);
+    private toast = inject(HotToastService)
+    private router = inject(Router)
+    
 
     signupForm = this.formBuilder.group<SignupUser>({
       firstName: '',
@@ -28,13 +34,14 @@ export class Signup {
       if(this.signupForm.invalid) {
         console.log('invalid')
       }
-      console.log(this.signupForm.value)
       this.userSevice.createUser(this.signupForm.getRawValue()).subscribe({
-        next: (user) => {
-          console.log(user)
+        next: (user: UserResponse) => {
+          this.router.navigate(["/"])
+          this.toast.success(user.message)
         },
         error: (err) => {
           console.log(err)
+          this.toast.error(err)
         }
       })
     }
